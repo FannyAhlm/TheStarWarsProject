@@ -38,7 +38,8 @@ function App() {
       }
       
      let promisesWithPlanetNames = wholeList.map(async character => {
-         const response = await fetch(character.homeworld);
+        let request = character.homeworld.replace('http', 'https');
+         const response = await fetch(request);
          const data = await response.json();
          character.homeworld = data.name;
          return character
