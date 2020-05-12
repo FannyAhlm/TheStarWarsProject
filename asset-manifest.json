@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/TheStarWarsProject/static/css/main.e1bcce07.chunk.css",
+    "main.css": "/TheStarWarsProject/static/css/main.377c6dca.chunk.css",
     "main.js": "/TheStarWarsProject/static/js/main.29a5a922.chunk.js",
     "main.js.map": "/TheStarWarsProject/static/js/main.29a5a922.chunk.js.map",
     "runtime-main.js": "/TheStarWarsProject/static/js/runtime-main.6ca10ef1.js",
@@ -8,16 +8,16 @@
     "static/js/2.468e095f.chunk.js": "/TheStarWarsProject/static/js/2.468e095f.chunk.js",
     "static/js/2.468e095f.chunk.js.map": "/TheStarWarsProject/static/js/2.468e095f.chunk.js.map",
     "index.html": "/TheStarWarsProject/index.html",
-    "precache-manifest.6e043695be62000403a9c972e479b451.js": "/TheStarWarsProject/precache-manifest.6e043695be62000403a9c972e479b451.js",
+    "precache-manifest.7faec39a5564b166e54b7bc495aa7915.js": "/TheStarWarsProject/precache-manifest.7faec39a5564b166e54b7bc495aa7915.js",
     "service-worker.js": "/TheStarWarsProject/service-worker.js",
-    "static/css/main.e1bcce07.chunk.css.map": "/TheStarWarsProject/static/css/main.e1bcce07.chunk.css.map",
+    "static/css/main.377c6dca.chunk.css.map": "/TheStarWarsProject/static/css/main.377c6dca.chunk.css.map",
     "static/js/2.468e095f.chunk.js.LICENSE.txt": "/TheStarWarsProject/static/js/2.468e095f.chunk.js.LICENSE.txt",
     "static/media/App.css": "/TheStarWarsProject/static/media/bakgrund2.9f225470.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.6ca10ef1.js",
     "static/js/2.468e095f.chunk.js",
-    "static/css/main.e1bcce07.chunk.css",
+    "static/css/main.377c6dca.chunk.css",
     "static/js/main.29a5a922.chunk.js"
   ]
 }
