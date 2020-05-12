@@ -16,6 +16,7 @@ const FormComponent = ({addNewFavourite}) => {
     const [opt2Touched, setOpt2Touched] = useState(false);
 
     const MAXIMUMCHARACTERERROR = 'No more than 25 characters allowed';
+    const NUMBERSERROR = "Can only contain letters";
 
     let correctForm = false;
     let validatedName = false;
@@ -24,8 +25,21 @@ const FormComponent = ({addNewFavourite}) => {
 
     //Name Validation//
 
+    let nameRegex = /^[a-z]+[a-z0-9-\s]+$/i;
+    let nameStartRegex = /^[a-z]/i;
+
     let nameCss = '';
     let nameError = '2 characters required'
+    if(nameTouched && !nameRegex.test(name) && name.length > 1){
+
+        if(!nameStartRegex.test(name)){
+            nameCss = 'error';
+            nameError = 'Must start with a letter';
+        } else{
+            nameCss = 'error';
+            nameError = "Can't contain special charcters";
+        }
+    }
     if(nameTouched && name.length < 2){
         nameCss = 'error';
     } else if(nameTouched && name.length > 25){
@@ -38,12 +52,18 @@ const FormComponent = ({addNewFavourite}) => {
     // Option 1 Validation //
 
     let ageRegex = /^[\d]+\s?(bby|aby)/i;
+    let climateTerrainRegex = /^[a-z\s,]+$/i;
+    let homeworldRegex = /^[a-z]+$/i;
+    let spacesRegex = /\s/;
 
     let opt1css = '';
     let opt1error = MAXIMUMCHARACTERERROR;
 
     if(formType === 'planet'){
         if(opt1Touched && opt1.length > 25){
+            opt1css = 'error';
+        } else if(opt1Touched && opt1.length > 0 && !climateTerrainRegex.test(opt1)){
+            opt1error = NUMBERSERROR;
             opt1css = 'error';
         } else{
             validatedOpt1 = true;
@@ -61,10 +81,30 @@ const FormComponent = ({addNewFavourite}) => {
 
     let opt2css = '';
     let opt2error = MAXIMUMCHARACTERERROR;
-    if(opt2Touched && opt2.length > 25){
-        opt2css = 'error';
-    } else{
-        validatedOpt2 = true;
+    if(formType === 'planet'){
+        if(opt2Touched && opt2.length > 25){
+            opt2css = 'error';
+        }else if(opt2Touched && opt2.length > 0 && !climateTerrainRegex.test(opt2)){
+            opt2css = 'error';
+            opt2error = NUMBERSERROR;
+        }
+        else{
+            validatedOpt2 = true;
+        }
+
+    } else {
+        if(opt2Touched && opt2.length > 25){
+            opt2css = 'error';
+        } else if(opt2Touched && opt2.length > 0 && !homeworldRegex.test(opt2)){
+            opt2css = 'error';
+            if(spacesRegex.test(opt2)){
+                opt2error = 'Only one planet allowed';
+            } else{
+                opt2error = NUMBERSERROR;
+            }
+        } else{
+            validatedOpt2 = true;
+        }
     }
 
     if(validatedName && pickedCardType && validatedOpt1 && validatedOpt2){

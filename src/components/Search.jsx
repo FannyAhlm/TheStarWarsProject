@@ -9,6 +9,10 @@ const Search = ({children, characterList, planetList, addNewFavourite, userFavou
     const [searchLetters, setSearchLetters] = useState('');
 
     let characterBtn = '', planetBtn = '';
+    let searchInfo = 'Search by name, birthyear or homeworld';
+    if(showCategory === 'planets'){
+        searchInfo = 'Search by name, terrain or climate'
+    }
 
     function createCard(item){
         return(
@@ -46,7 +50,7 @@ const Search = ({children, characterList, planetList, addNewFavourite, userFavou
             {children}
             <div className="backdrop">
                 <label htmlFor="searchfield"><h2>Search:</h2></label>
-                <input onChange={e=> setSearchLetters(e.target.value)}
+                <input placeholder={searchInfo} onChange={e=> setSearchLetters(e.target.value)}
                 id="searchfield" type="text"/>
                 <CategoryBtns choseCharacters={() => setShowCategory('characters')}
                 chosePlanets={()=>setShowCategory('planets')}

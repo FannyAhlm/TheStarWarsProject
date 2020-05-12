@@ -153,6 +153,9 @@ input#searchfield{
   margin: 0 auto;
   display: block;
 }
+input::placeholder{
+  font-size: .7rem;
+}
 
 nav.categories{
   margin: 1rem auto 0;
