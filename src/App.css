@@ -284,14 +284,16 @@ button:disabled{
 }
 
 form > p{
-  color: rgb(145, 3, 3);
+  color: rgb(145, 10, 10);
   font-size: .8rem;
   opacity: 0;
   text-align: right;
-  margin-right: 2rem;
 }
 form > p.error{
   opacity: 1;
+  width: 90%;
+  max-width: 16rem;
+  margin: 0 auto;
 }
 form > p.visible{
   opacity: 1;
