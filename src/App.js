@@ -9,7 +9,7 @@ function App() {
 
   const HOMESCREEN = 'homescreen' ,SEARCHSCREEN = 'searchscreen', FAVOURITESCREEN = 'favouritescreen';
 
-  const [screen, setScreen] = useState(FAVOURITESCREEN);
+  const [screen, setScreen] = useState(HOMESCREEN);
 
   const [characterList, setCharacterList] = useState([]);
   const [planetList, setPlanetList] = useState([]);
